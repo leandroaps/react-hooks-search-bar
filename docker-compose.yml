@@ -1,0 +1,10 @@
+version: "3"
+services:
+  react:
+    build:
+      context: .
+      args:
+        - DOMAIN=${DOMAIN}
+    container_name: osiris-admin-frontend
+    ports:
+      - 80

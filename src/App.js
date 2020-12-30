@@ -19,37 +19,37 @@ function App() {
 
   useEffect(() => {
     const results = social.filter((person) =>
-      person.toLowerCase().includes(searchTerm)
+      person.toLowerCase().includes(searchTerm),
     );
     setSearchResults(results);
   }, [searchTerm]);
   return (
     <div>
       <header>
-        <nav class='navbar navbar-expand-md navbar-dark fixed-top bg-dark'>
-          <div class='container-fluid'>
+        <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <div className="container-fluid">
             <button
-              class='navbar-toggler'
-              type='button'
-              data-bs-toggle='collapse'
-              data-bs-target='#navbarCollapse'
-              aria-controls='navbarCollapse'
-              aria-expanded='false'
-              aria-label='Toggle navigation'
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
             >
-              <span class='navbar-toggler-icon'></span>
+              <span className="navbar-toggler-icon" />
             </button>
-            <div class='collapse navbar-collapse' id='navbarCollapse'>
-              <form class='d-flex'>
+            <div className="collapse navbar-collapse" id="navbarCollapse">
+              <form className="d-flex">
                 <input
-                  class='form-control me-2'
-                  type='search'
-                  placeholder='Search'
-                  aria-label='Search'
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
                   value={searchTerm}
                   onChange={handleChange}
                 />
-                <button class='btn btn-outline-success' type='submit'>
+                <button className="btn btn-outline-success" type="submit">
                   Search
                 </button>
               </form>
@@ -58,11 +58,13 @@ function App() {
         </nav>
       </header>
 
-      <main class='flex-shrink-0'>
-        <div class='container mt-5'>
-          <ul class='list-group'>
+      <main className="flex-shrink-0">
+        <div className="container mt-5">
+          <ul className="list-group">
             {searchResults.map((item) => (
-              <li class='list-group-item'>{item}</li>
+              <li className="list-group-item" key={item}>
+                {item}
+              </li>
             ))}
           </ul>
         </div>
